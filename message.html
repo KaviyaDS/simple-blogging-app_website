@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Messaging</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset default margins and paddings */
+body, h1, h2, p, button, input {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background image */
+body {
+    background-image: url('kav.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the chat container */
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the chat header */
+.chat-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style chat messages container */
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+/* Style individual messages */
+.message {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Style chat input area */
+.chat-input {
+    display: flex;
+    align-items: center;
+}
+
+/* Style message input box */
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+/* Style send button */
+#send-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Style send button on hover */
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            Group Chat
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be added here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+   const messageInput = document.getElementById('message-input');
+const sendButton = document.getElementById('send-button');
+const chatMessages = document.getElementById('chat-messages');
+
+sendButton.addEventListener('click', () => {
+    const message = messageInput.value.trim();
+    if (message !== '') {
+        displayMessage(message);
+        messageInput.value = '';
+    }
+});
+
+function displayMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.textContent = message;
+    chatMessages.appendChild(messageElement);
+}
+ 
+</script>
+</html>

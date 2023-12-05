@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+    body {
+        background-image: url('https://favim.com/pd/s5/orig/140812/Favim.com-1990305.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+   }
+        body {
+  background-color: #f3f3f3;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 40px 55px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #220b0b;
+  border-radius: 3px;
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+    </style>
+    <script>
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username and password are valid
+            if((username ==="kaviya" || username==="kk") && password ==="123") {
+                // If valid, redirect to the second page
+                window.location = "post.html";
+            } else {
+                // If invalid, show an error message
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <center>
+    <h1> Login Here !</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="button" value="Login" onclick="validate()"><br><br><br>
+        
+    </form>
+    <center>
+       
+
+</body>
+</html>
